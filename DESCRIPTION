@@ -1,0 +1,11 @@
+Package: challengR
+Type: Package
+Title: An implementation of the Riot Games League of Legends API
+Version: 1.0
+Date: 2015-03-07
+Author: Pierre Formont <pierre.formont@gmail.com>
+Maintainer: Pierre Formont <pierre.formont@gmail.com>
+Description: An implementation of the Riot Games League of Legends API in R. It gives easy access to the data made available by Riot Games through their API for statistical processing in R.
+License: GPL-3
+Depends: magrittr
+Imports: jsonlite, dplyr

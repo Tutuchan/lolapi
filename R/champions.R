@@ -14,18 +14,9 @@
 #' @param apiKey A character, the API key delivered by Riot Games.
 #' @return A \code{tbl} (see \code{\link[dplyr]{tbl_df}}) containing some information for each champion (see Description)/
 #' 
-#' @export
 #' @name Champions
-
-GetChampionList <- function(region = myRegion, apiKey = myAPIKey){
-  dplyr::tbl_df(jsonlite::fromJSON(paste0("https://", region, mainURL, region, apiVersions$champion, "champion?api_key=", apiKey))$champions)
-    
-}
-
-#' @rdname Champions
 #' @export
-GetChampion <- function(championId, region = myRegion, apiKey = myAPIKey){
-  jsonlite::fromJSON(paste0("https://", region, mainURL, region, apiVersions$champion, "champion/", championID, "?api_key=", apiKey)) %>%
-    as.data.frame
+GetChampion <- function(championID = "", region = myRegion, apiKey = myAPIKey, baseURL = mainURL){
+  FetchData("champion", championID, region = region, baseURL = baseURL)
 }
 

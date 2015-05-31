@@ -12,7 +12,8 @@ AddAPIKey <- function(str, apiKey, symbol){
 }
 
 FetchData <- function(type, value, region = myRegion, apiKey = myAPIKey, baseURL = mainURL, symbol = "?"){
+  switch(type,
+         stats = value <- paste0("by-summoner/", value))
   res <- jsonlite::fromJSON(CreateURL(region, type, value, baseURL) %>% AddAPIKey(apiKey, symbol))
-  if (length(res) == 1) res <- unname(res)
   res
 }

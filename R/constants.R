@@ -1,6 +1,6 @@
 options(stringsAsFactors = FALSE)
 mainURL <- ".api.pvp.net/api/lol"
-staticURL <- ".api.pvp.net/api/lol/static-data"
+staticURL <- "global.api.pvp.net/api/lol/static-data"
 regions <- c("br", "eune", "euw", "kr", "lan", "las", "na", "oce", "tr", "ru", "pbe", "global")
 apiVersions <- data.frame(champion = "v1.2",
                           currentgame = "v1.0",

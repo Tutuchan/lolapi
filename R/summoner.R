@@ -18,5 +18,5 @@ summoner <- function(name = NULL, id = NULL, type = NULL){
     res
   }
   
-  fetch_data(api_type, NULL)
+  api_fetch(api_type, NULL)
 }

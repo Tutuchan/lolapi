@@ -11,11 +11,15 @@
 league <- function(summoner_id = NULL, team_id = NULL, entry = NULL){
    if (!is.null(summoner_id) & !is.null(team_id)) stop("specify either summoner ids or team ids!")
   
-  api_type <- if (!all(is.null(summoner_id))) {
-    paste0("league/by-summoner/", paste(summoner_id, collapse = ",%20"))
-  } else paste0("league/by-team/", paste(team_id, collapse = ",%20"))
+  if (!all(is.null(summoner_id))) {
+    api_type <- "league/by-summoner"
+    api_value <- summoner_id
+  } else  {
+    api_type <- "league/by-team"
+    api_value <- team_id
+  }
   
-  if (!is.null(entry)) api_type <- paste0(api_type, "/entry")
+  if (!is.null(entry)) api_value <- paste0(paste(api_value, collapse = ","), "/entry")
   
-  fetch_data(api_type, NULL)
+  api_fetch(api_type, api_value)
 } 

@@ -64,8 +64,6 @@ api_fetch <- function(api_type, api_value = NULL, ..., region = Sys.getenv("LOLA
   res <- api_function(region, api_type, api_value) %>% 
     add_api_key(api_key) %>% 
     add_additional_parameters(...)
-  
-  print(res)
   res %>% 
     jsonlite::fromJSON()
 }

@@ -9,7 +9,7 @@ api_setup(api_key, region)
 \arguments{
 \item{api_key}{a character}
 
-\item{region}{a character}
+\item{region}{a character, must be one of "br", "eune", "euw", "kr", "lan", "las", "na", "oce", "ru" or "tr"}
 }
 \description{
 Use this function to set up the usual region and key you want to use.

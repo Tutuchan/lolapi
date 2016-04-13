@@ -1,8 +1,8 @@
 Package: lolapi
 Type: Package
 Title: An implementation of the Riot Games League of Legends API
-Version: 0.1.0
-Date: 2016-04-09
+Version: 0.1.1
+Date: 2016-04-13
 Author: Pierre Formont <pierre.formont@gmail.com>
 Maintainer: Pierre Formont <pierre.formont@gmail.com>
 Description: An implementation of the Riot Games League of Legends API in R. It

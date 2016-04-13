@@ -8,7 +8,7 @@
 #' 
 #' @export
 
-match <- function(match_id, include_timeline = NULL){
+lol_match <- function(match_id, include_timeline = NULL){
   api_fetch("match", match_id, include_timeline = include_timeline)
 } 
 
@@ -21,7 +21,7 @@ match <- function(match_id, include_timeline = NULL){
 #' @param begin_index a numeric
 #' @param end_index a numeric
 #' 
-#' @rdname match
+#' @rdname lol_match
 #' @export
 match_list <- function(summoner_id, champion_ids = NULL, ranked_queues = NULL, seasons = NULL, 
                        begin_time = NULL, end_time = NULL, begin_index = NULL, end_index = NULL){

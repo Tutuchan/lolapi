@@ -64,8 +64,9 @@ api_fetch <- function(api_type, api_value = NULL, ..., region = Sys.getenv("LOLA
   res <- api_function(region, api_type, api_value) %>% 
     add_api_key(api_key) %>% 
     add_additional_parameters(...)
-  res %>% 
-    jsonlite::fromJSON(simplifyVector =  FALSE)
+  safeJSON <- purrr::safely(function(x) jsonlite::fromJSON(x, simplifyVector =  FALSE))
+  while(is.null(out <- safeJSON(res)$result)) out <- safeJSON(res)$result
+  out
 }
 
 api_fetch_static <- function(api_type, api_value = NULL, ..., region = Sys.getenv("LOLAPI_REGION"), api_key = Sys.getenv("LOLAPI_KEY")) {

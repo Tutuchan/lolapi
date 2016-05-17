@@ -11,5 +11,6 @@ Description: An implementation of the Riot Games League of Legends API in R. It
 License: MIT
 Imports:
     jsonlite,
-    dplyr
+    dplyr,
+    purrr
 RoxygenNote: 5.0.1
